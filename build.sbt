@@ -28,3 +28,5 @@ awsS3Bucket := Some("lambda-scala")
 awsLambdaMemorySize := Some(192)
 
 awsLambdaTimeout := Some(30)
+
+fork in run := true

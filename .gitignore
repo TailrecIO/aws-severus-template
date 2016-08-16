@@ -1,5 +1,11 @@
 
+*.jar
+*.class
+*.lock
+
 .idea/
 lib_managed/
 **/target/
 
+project/.sbtserver
+project/.sbtserver
