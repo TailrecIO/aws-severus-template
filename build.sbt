@@ -1,6 +1,6 @@
-name := "sbt-aws-fn-template"
+name := "sbt-aws-fun-template"
 
-version := "1.1"
+version := "1.0"
 
 scalaVersion := "2.11.8"
 
@@ -15,12 +15,12 @@ assemblyJarName in assembly := {
 
 retrieveManaged := true
 
-enablePlugins(AwsFnPlugin)
+enablePlugins(AwsFunPlugin)
 
 awsLambdaHandlers := Seq(
-  "function1"                 -> "io.tailrec.example.Lambda::handleRequest1",
-  "function2"                 -> "io.tailrec.example.Lambda::handleRequest2",
-  "function3"                 -> "io.tailrec.example.Lambda::handleRequest3"
+  "function1"  -> "io.tailrec.example.Lambda::handleRequest1",
+  "function2"  -> "io.tailrec.example.Lambda::handleRequest2",
+  "function3"  -> "io.tailrec.example.Lambda::handleRequest3"
 )
 
 awsS3Bucket := Some("lambda-scala")
@@ -28,5 +28,6 @@ awsS3Bucket := Some("lambda-scala")
 awsLambdaMemorySize := Some(192)
 
 awsLambdaTimeout := Some(30)
+
 
 fork in run := true
