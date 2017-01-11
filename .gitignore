@@ -2,6 +2,7 @@
 *.jar
 *.class
 *.lock
+*.md5
 
 .idea/
 lib_managed/
