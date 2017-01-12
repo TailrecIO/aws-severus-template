@@ -44,14 +44,15 @@ class SimpleServiceTest extends FunSuite with BeforeAndAfterAll {
 
   test("hello function should return 'Hello lambda' 2") {
     val request = new InvokeRequest()
-    request.setFunctionName("getIpInfo")
+    request.setFunctionName("delayVersion1")
     request.setInvocationType(InvocationType.RequestResponse)
     request.setLogType(LogType.Tail)
-    request.setPayload("\"124.122.182.123\"")
+//    request.setPayload("\"124.122.182.123\"")
 
     val result = client.invoke(request)
     println("Log result: " + new String(Base64.getDecoder.decode(result.getLogResult), "UTF-8"))
     println("Function error: " + result.getFunctionError)
+    println("Function payload: " + result.getPayload)
     println("Status code: " + result.getStatusCode)
     println("============================")
     println(new String(result.getPayload.array(), "UTF-8"))
